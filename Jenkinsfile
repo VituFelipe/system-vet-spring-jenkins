@@ -7,17 +7,17 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/VituFelipe/system-vet-spring-jenkins.git', branch: 'master'
+                git url: 'https://github.com/VituFelipe/system-vet-spring-jenkins.git', branch: 'master', credentialsId: 'github-credentials'
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
             post {
                 always {
