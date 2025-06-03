@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -36,7 +37,8 @@ class UserControllerTests {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"username\":\"testuser\",\"email\":\"test@example.com\"}"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username").value("testuser"));
+                .andExpect(jsonPath("$.username").value("testuser"))
+                .andExpect(jsonPath("$.email").value("test@example.com"));;
     }
 
     @Test
@@ -47,5 +49,15 @@ class UserControllerTests {
         mockMvc.perform(get("/users/list"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].username").value("testuser"));
+    }
+
+    @Test
+    void testGetUserById() throws Exception {
+        User user = new User("1", "testuser", "test@example.com");
+        when(userService.findById("1")).thenReturn(Optional.of(user));
+
+        mockMvc.perform(get("/users/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.username").value("testuser"));
     }
 }

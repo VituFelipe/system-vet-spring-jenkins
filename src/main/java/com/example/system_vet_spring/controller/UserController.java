@@ -14,6 +14,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
@@ -22,5 +26,10 @@ public class UserController {
     @GetMapping("/list")
     public List<User> listUsers() {
         return userService.listUsers();
+    }
+
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable String id) {
+        return userService.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
 }
