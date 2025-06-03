@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/VituFelipe/system-vet-spring.git', branch: 'main'
+                git url: 'https://github.com/VituFelipe/system-vet-spring-jenkins.git', branch: 'master'
             }
         }
         stage('Build') {
