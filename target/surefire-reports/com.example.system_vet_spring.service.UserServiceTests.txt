@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: com.example.system_vet_spring.service.UserServiceTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 1.396 s <<< FAILURE! -- in com.example.system_vet_spring.service.UserServiceTests
+com.example.system_vet_spring.service.UserServiceTests.testListUsers -- Time elapsed: 0.013 s <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/AutoClose
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.AutoClose
+	... 3 more
+
+com.example.system_vet_spring.service.UserServiceTests.testCreateUser -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/AutoClose
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.AutoClose
+	... 3 more
+
+com.example.system_vet_spring.service.UserServiceTests -- Time elapsed: 1.396 s <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/AutoClose
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.AutoClose
+	... 1 more
+

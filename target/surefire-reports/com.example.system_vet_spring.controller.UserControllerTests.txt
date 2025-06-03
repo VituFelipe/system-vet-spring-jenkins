@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: com.example.system_vet_spring.controller.UserControllerTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 7.678 s <<< FAILURE! -- in com.example.system_vet_spring.controller.UserControllerTests
+com.example.system_vet_spring.controller.UserControllerTests.testListUsers -- Time elapsed: 0.739 s <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/AutoClose
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.AutoClose
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 3 more
+
+com.example.system_vet_spring.controller.UserControllerTests.testCreateUser -- Time elapsed: 0.203 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.username"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.system_vet_spring.controller.UserControllerTests.testCreateUser(UserControllerTests.java:39)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	Suppressed: java.lang.NoClassDefFoundError: org/junit/jupiter/api/AutoClose
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+		... 2 more
+	Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.AutoClose
+		... 3 more
+Caused by: java.lang.IllegalArgumentException: json can not be null or empty
+	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:401)
+	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:390)
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:348)
+	... 7 more
+
+com.example.system_vet_spring.controller.UserControllerTests -- Time elapsed: 7.678 s <<< ERROR!
+java.lang.NoClassDefFoundError: org/junit/jupiter/api/AutoClose
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: org.junit.jupiter.api.AutoClose
+	... 1 more
+
